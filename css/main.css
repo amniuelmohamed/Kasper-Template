@@ -1,4 +1,7 @@
 /* START CSS VARIABLES */
+:root {
+    --main-color: #19c8fa;
+}
 
 /* END CSS VARIABLES */
 
@@ -22,6 +25,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-family: 'Source Code Pro', monospace;
     font-family: 'Work Sans', sans-serif;
+    background-color: black;
 }
 
 ul {
@@ -55,3 +59,68 @@ ul {
 }
 
 /* END Global Rules */
+
+
+
+/* START Header */
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+header .container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    height: 1px;
+    width: calc(100% - 30px);
+    background-color: #a2a2a2;
+}
+
+header .container nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+header .container nav ul {
+    display: flex;
+}
+
+header .container nav ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 40px 18px;
+    transition: .3s;
+}
+
+header .container nav ul li a.active,
+header .container nav ul li a:hover {
+    color: var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+    position: relative;
+    z-index: 1;
+}
+
+header .container nav .search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 80px;
+    padding-left: 20px;
+    height: 30px;
+    border-left: 1px solid white;
+}
+
+header .container nav .search-form i {
+    color: white;
+}
+
+/* END Header */

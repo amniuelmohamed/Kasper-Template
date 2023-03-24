@@ -1,6 +1,7 @@
 /* START CSS VARIABLES */
 :root {
-    --main-color: #19c8fa;
+    --main-color: rgb(25, 200, 250);
+    --transparent-color: rgb(25 200 250 / 40%)
 }
 
 /* END CSS VARIABLES */
@@ -123,6 +124,7 @@ header .container nav ul {
         top: 100%;
         left: 0;
         width: 100%;
+        background-color: rgb(0 0 0 / 70%);
     }
 
     header .container nav ul li a {
@@ -176,3 +178,104 @@ header .container nav .search-form i {
 }
 
 /* END Header */
+
+
+/* START Landing */
+.landing {
+    min-height: 100vh;
+    background-color: #444;
+    background-image: url(../images/jeremy-hynes-zLrqHNms8eE-unsplash.jpg);
+    background-size: cover;
+    position: relative;
+}
+
+.landing::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 50%);
+}
+
+.landing .text {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--transparent-color);
+    color: white;
+    padding: 40px;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.landing .text .content {
+    max-width: 70%;
+}
+
+@media (max-width: 991px) {
+    .landing .text {
+        width: 100%;
+    }
+
+    .landing .text .content {
+        max-width: 100%;
+    }
+}
+
+.landing .text .content h2 {
+    font-weight: 400;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.landing .text .content p {
+    line-height: 2;
+    font-size: 14px;
+}
+
+.landing .chevrons {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+    width: calc(100% - 60px);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 991px) {
+    .landing .chevrons {
+        display: none;
+    }
+}
+
+.landing .bullets {
+    position: absolute;
+    z-index: 2;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.landing .bullets li {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    border: 1px solid white;
+    margin-right: 10px;
+}
+
+.landing .bullets li.active {
+    background-color: var(--main-color);
+    border: none;
+}
+
+/* END Landing */

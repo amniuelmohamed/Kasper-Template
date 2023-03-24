@@ -63,11 +63,20 @@ ul {
 
 
 /* START Header */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
+    min-height: 78.09px;
 }
 
 header .container::after {
@@ -87,8 +96,38 @@ header .container nav {
     align-items: center;
 }
 
+header .container nav .mobile-menu i {
+    color: white;
+    font-size: 22px;
+}
+
+@media (min-width: 768px) {
+    header .container nav .mobile-menu {
+        display: none;
+    }
+}
+
 header .container nav ul {
     display: flex;
+}
+
+@media (max-width: 767px) {
+    header .container nav ul {
+        display: none;
+    }
+
+    header .container nav .mobile-menu:hover+ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+    }
+
+    header .container nav ul li a {
+        padding: 20px !important
+    }
 }
 
 header .container nav ul li a {
@@ -99,6 +138,12 @@ header .container nav ul li a {
     font-size: 14px;
     padding: 40px 18px;
     transition: .3s;
+}
+
+@media (max-width: 991px) {
+    header .container nav ul li a {
+        padding: 30px 10px;
+    }
 }
 
 header .container nav ul li a.active,
@@ -117,6 +162,13 @@ header .container nav .search-form {
     padding-left: 20px;
     height: 30px;
     border-left: 1px solid white;
+}
+
+@media (max-width: 991px) {
+    header .container nav .search-form {
+        margin-left: 20px;
+        padding-left: 10px;
+    }
 }
 
 header .container nav .search-form i {

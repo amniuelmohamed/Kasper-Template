@@ -1,7 +1,9 @@
 /* START CSS VARIABLES */
 :root {
     --main-color: rgb(25, 200, 250);
-    --transparent-color: rgb(25 200 250 / 40%)
+    --secondary-color: #a8a8a8;
+    --transparent-color: rgb(25 200 250 / 40%);
+    --section-padding: 100px;
 }
 
 /* END CSS VARIABLES */
@@ -22,11 +24,10 @@ html {
 }
 
 body {
-    font-family: 'Jomhuria', cursive;
+    /* font-family: 'Jomhuria', cursive; */
     font-family: 'Open Sans', sans-serif;
-    font-family: 'Source Code Pro', monospace;
-    font-family: 'Work Sans', sans-serif;
-    background-color: black;
+    /* font-family: 'Source Code Pro', monospace;
+    font-family: 'Work Sans', sans-serif; */
 }
 
 ul {
@@ -61,6 +62,56 @@ ul {
 
 /* END Global Rules */
 
+
+/* START Components */
+.main-heading {
+    text-align: center;
+}
+
+.main-heading h2 {
+    font-size: 2em;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #1f2021;
+    letter-spacing: 2px;
+    margin-bottom: 70px;
+    position: relative;
+}
+
+.main-heading h2::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -33px;
+    height: 1px;
+    width: 100px;
+    background-color: #1f2021;
+}
+
+.main-heading h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -38px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #1f2021;
+    background-color: white;
+}
+
+.main-heading p {
+    width: 500px;
+    margin: 0 auto 100px;
+    max-width: 100%;
+    line-height: 2;
+    font-size: 14px;
+    color: var(--secondary-color);
+}
+
+/* END Components */
 
 
 /* START Header */
@@ -279,3 +330,61 @@ header .container nav .search-form i {
 }
 
 /* END Landing */
+
+
+
+/* START Services */
+.services {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+
+.services .services-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+@media (min-width: 768px) {
+    .services .services-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        grid-column-gap: 60px;
+        grid-row-gap: 80px;
+    }
+}
+
+.services .services-content .service-box {
+    display: flex;
+}
+
+.services .services-content .service-box i {
+    margin-right: 60px;
+}
+
+@media (max-width: 767px) {
+    .services .services-content .service-box {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .services .services-content .service-box i {
+        margin: 0 0 20px;
+    }
+}
+
+
+.services .services-content .service-box h3 {
+    color: var(--main-color);
+    font-weight: normal;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.services .services-content .service-box p {
+    font-size: 14px;
+    color: var(--secondary-color);
+    line-height: 1.8;
+}
+
+/* END Services */

@@ -2,7 +2,7 @@
 :root {
     --main-color: rgb(25, 200, 250);
     --secondary-color: #a8a8a8;
-    --transparent-color: rgb(25 200 250 / 40%);
+    --transparent-color: rgba(25, 201, 250, 0.651);
     --section-padding: 100px;
 }
 
@@ -24,10 +24,10 @@ html {
 }
 
 body {
-    /* font-family: 'Jomhuria', cursive; */
+    font-family: 'Jomhuria', cursive;
     font-family: 'Open Sans', sans-serif;
-    /* font-family: 'Source Code Pro', monospace;
-    font-family: 'Work Sans', sans-serif; */
+    font-family: 'Source Code Pro', monospace;
+    font-family: 'Work Sans', sans-serif;
 }
 
 ul {
@@ -281,7 +281,7 @@ header .container nav .search-form i {
 .landing .text .content h2 {
     font-weight: 400;
     line-height: 1.7;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .landing .text .content p {
@@ -388,3 +388,206 @@ header .container nav .search-form i {
 }
 
 /* END Services */
+
+
+
+/* START Design */
+.design {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    height: 500px;
+    background-image: url(../images/rick-rothenberg-Nqx3SaMp4kQ-unsplash.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.design::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 50%);
+}
+
+.design .image,
+.design .text {
+    z-index: 2;
+    flex: 1;
+}
+
+.design .image {
+    text-align: center;
+}
+
+.design .image img {
+    position: relative;
+    left: 100px;
+    top: 80px;
+}
+
+@media (max-width: 767px) {
+    .design .image {
+        display: none;
+    }
+}
+
+@media (max-width: 1199px) {
+    .design .image img {
+        left: 0;
+    }
+}
+
+.design .text {
+    background-color: var(--transparent-color);
+    color: white;
+    padding: 40px;
+}
+
+.design .text h3 {
+    margin-bottom: 30px;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.design .text ul li {
+    padding: 13px 0;
+    text-transform: capitalize;
+}
+
+.design .text ul li::before {
+    content: "\f390";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: relative;
+    margin-right: 25px;
+    top: 1px;
+}
+
+/* END Design */
+
+
+
+/* START Portfolio */
+.portfolio {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+
+.portfolio .shuffle {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.portfolio .shuffle li {
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 5%;
+}
+
+.portfolio .shuffle li.active {
+    background-color: var(--main-color);
+    color: white;
+}
+
+.portfolio .imgs-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.portfolio .imgs-container .box {
+    position: relative;
+    overflow: hidden;
+}
+
+/* .portfolio .imgs-container .box::after {
+    content: "+";
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    background-color: var(--transparent-color);
+    color: white;
+    font-size: 3em;
+    font-weight: lighter;
+    width: 80px;
+    border-radius: 50%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: .3s;
+}
+
+.portfolio .imgs-container .box:hover::after {
+    opacity: 1;
+} */
+
+@media (min-width: 768px) {
+    .portfolio .imgs-container .box {
+        flex-basis: 50%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .portfolio .imgs-container .box {
+        flex-basis: 25%;
+    }
+}
+
+.portfolio .imgs-container .box img {
+    max-width: 100%;
+    height: 100%;
+    transition: .3s .1s;
+}
+
+.portfolio .imgs-container .box:hover img {
+    transform: scale(1.2);
+}
+
+.portfolio .imgs-container .box .caption {
+    position: absolute;
+    left: 0;
+    bottom: -100%;
+    background-color: white;
+    padding: 20px;
+    width: 100%;
+    transition: .3s;
+}
+
+.portfolio .imgs-container .box:hover .caption {
+    bottom: 0;
+}
+
+.portfolio .imgs-container .box .caption h4 {
+    font-weight: normal;
+    font-size: 1.2em;
+}
+
+.portfolio .imgs-container .box .caption p {
+    color: var(--main-color);
+    font-size: 0.9em;
+    margin-top: 3px;
+}
+
+.portfolio>a {
+    display: block;
+    margin: 30px auto;
+    background-color: var(--main-color);
+    width: fit-content;
+    padding: 10px 40px;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* END Portfolio */

@@ -971,3 +971,196 @@ header .container nav .search-form i {
 }
 
 /* END Quote */
+
+
+
+/* START Pricing */
+.pricing {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+
+.pricing .plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.pricing .plans .plan {
+    text-align: center;
+}
+
+.pricing .plans .plan .head {
+    padding: 30px 20px;
+    border-top: 1px solid var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+}
+
+.pricing .plans .plan .head h3 {
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.pricing .plans .plan .head span {
+    font-size: 4em;
+    font-weight: 500;
+    position: relative;
+}
+
+.pricing .plans .plan .head span::before {
+    content: attr(data-currency);
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    left: -30px;
+}
+
+.pricing .plans .plan .head span::after {
+    content: "/MO";
+    font-size: 12px;
+    position: absolute;
+    bottom: 15px;
+    right: -30px;
+}
+
+.pricing .plans .plan .features {
+    border-bottom: 1px solid var(--main-color);
+}
+
+.pricing .plans .plan .features li {
+    padding: 20px;
+    position: relative;
+}
+
+.pricing .plans .plan .features li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 1px;
+    background-color: var(--main-color);
+}
+
+.pricing .plans .plan a:last-of-type {
+    padding: 15px 30px;
+    display: block;
+    width: fit-content;
+    margin: 30px auto;
+    border: 1px solid var(--main-color);
+    text-decoration: none;
+    color: black;
+}
+
+.pricing p.contact-us {
+    text-align: center;
+    margin: 60px 0 30px;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+}
+
+.pricing a.contact-us {
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+    background-color: var(--main-color);
+    color: white;
+    text-decoration: none;
+    padding: 15px 35px;
+}
+
+/* END Pricing */
+
+
+
+/* START Subscription */
+.subscription {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-image: url(../images/subscription.jpg);
+    background-size: cover;
+    position: relative;
+    color: white;
+}
+
+.subscription::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 50%);
+}
+
+.subscription .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 991px) {
+    .subscription .container {
+        flex-direction: column;
+    }
+}
+
+.subscription form {
+    display: flex;
+    min-width: 55%;
+    max-width: 100%;
+    position: relative;
+}
+
+.subscription form ::placeholder {
+    color: white;
+    text-transform: uppercase;
+}
+
+.subscription form i {
+    position: absolute;
+    font-size: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+}
+
+.subscription form input[type="email"] {
+    padding: 20px 20px 20px 60px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-right: none;
+    outline: none;
+    width: calc(100% - 130px);
+    color: white;
+    caret-color: var(--main-color);
+}
+
+.subscription form input[type="submit"] {
+    width: 130px;
+    padding: 20px;
+    border: 1px solid white;
+    border-left: none;
+    outline: none;
+    background-color: var(--main-color);
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.subscription p {
+    line-height: 1.6;
+    margin-left: 30px;
+    font-size: 14px;
+}
+
+@media (max-width: 991px) {
+    .subscription p {
+        margin: 30px 0 0;
+        text-align: center;
+    }
+}
+
+/* END Subscription */

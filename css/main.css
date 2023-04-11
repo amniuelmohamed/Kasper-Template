@@ -986,6 +986,12 @@ header .container nav .search-form i {
     gap: 30px;
 }
 
+@media (max-width: 991px) {
+    .pricing .plans {
+        row-gap: 60px;
+    }
+}
+
 .pricing .plans .plan {
     text-align: center;
 }
@@ -1164,3 +1170,107 @@ header .container nav .search-form i {
 }
 
 /* END Subscription */
+
+
+
+/* START Contact Us */
+section.contact-us {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+
+section.contact-us .contact-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 991px) {
+    section.contact-us .contact-content {
+        flex-direction: column;
+    }
+}
+
+section.contact-us .contact-content form {
+    flex-basis: 65%;
+    display: flex;
+    flex-direction: column;
+}
+
+section.contact-us .contact-content form ::placeholder {
+    text-transform: uppercase;
+    color: black;
+}
+
+section.contact-us .contact-content form .contact-input {
+    padding: 20px;
+    margin-bottom: 30px;
+    caret-color: var(--main-color);
+    border: 1px solid var(--secondary-color);
+    /* outline: none; */
+}
+
+section.contact-us .contact-content form textarea {
+    resize: none;
+    height: 200px;
+}
+
+section.contact-us .contact-content form input[type="submit"] {
+    padding: 15px 35px;
+    align-self: end;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+section.contact-us .contact-content .contact-infos {
+    flex-basis: 30%;
+}
+
+@media (max-width: 991px) {
+    section.contact-us .contact-content .contact-infos {
+        order: -1;
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+    }
+}
+
+section.contact-us .contact-infos h4 {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 991px) {
+    section.contact-us .contact-infos h4 {
+        margin-bottom: 15px;
+    }
+}
+
+section.contact-us .contact-infos .get-in-touch {
+    margin-bottom: 85px;
+}
+
+section.contact-us .contact-infos .get-in-touch a {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+section.contact-us .contact-infos .where-we-are address {
+    font-style: normal;
+    color: var(--secondary-color);
+    line-height: 1.6;
+}
+
+@media (max-width: 991px) {
+    section.contact-us .contact-infos .where-we-are address {
+        margin-top: -3px;
+    }
+}
+
+/* END Contact Us */
